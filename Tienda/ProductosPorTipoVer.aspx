@@ -38,7 +38,9 @@
         <Columns>
             <asp:BoundField DataField="IdProducto" HeaderText="IdProducto" ReadOnly="True" SortExpression="IdProducto" />
             <asp:BoundField DataField="DesPro" HeaderText="DesPro" SortExpression="DesPro" />
-            <asp:BoundField DataField="PrePro" HeaderText="PrePro" SortExpression="PrePro" />
+            <asp:BoundField DataField="PrePro" HeaderText="PrePro" SortExpression="PrePro" DataFormatString="{0:n2}" >
+            <ItemStyle HorizontalAlign="Right" />
+            </asp:BoundField>
             <asp:BoundField DataField="IdUnidad" HeaderText="IdUnidad" SortExpression="IdUnidad" />
             <asp:BoundField DataField="IdTipo" HeaderText="IdTipo" SortExpression="IdTipo" />
         </Columns>
