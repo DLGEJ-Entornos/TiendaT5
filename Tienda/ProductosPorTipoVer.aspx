@@ -28,7 +28,7 @@
     </asp:GridView>
 
     <h3>Productos</h3>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [PRODUCTO] WHERE ([IdTipo] = @IdTipo)">
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [IdProducto], [DesPro], [PrePro], [IdUnidad], [DesTip] FROM [ProductosDet] WHERE ([IdTipo] = @IdTipo)">
         <SelectParameters>
             <asp:ControlParameter ControlID="grdTipos" Name="IdTipo" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
@@ -38,11 +38,9 @@
         <Columns>
             <asp:BoundField DataField="IdProducto" HeaderText="IdProducto" ReadOnly="True" SortExpression="IdProducto" />
             <asp:BoundField DataField="DesPro" HeaderText="DesPro" SortExpression="DesPro" />
-            <asp:BoundField DataField="PrePro" HeaderText="PrePro" SortExpression="PrePro" DataFormatString="{0:n2}" >
-            <ItemStyle HorizontalAlign="Right" />
-            </asp:BoundField>
+            <asp:BoundField DataField="PrePro" HeaderText="PrePro" SortExpression="PrePro" />
             <asp:BoundField DataField="IdUnidad" HeaderText="IdUnidad" SortExpression="IdUnidad" />
-            <asp:BoundField DataField="IdTipo" HeaderText="IdTipo" SortExpression="IdTipo" />
+            <asp:BoundField DataField="DesTip" HeaderText="Descripción del Tipo" SortExpression="DesTip" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
